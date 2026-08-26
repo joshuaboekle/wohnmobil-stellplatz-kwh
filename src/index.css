@@ -1,23 +1,146 @@
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap");
 @import "tailwindcss";
 
-@theme {
-  --font-display: "Space Grotesk", "Apfel Grotezk", sans-serif;
-  --font-body: "Inter", "Apfel Grotezk", sans-serif;
+@font-face {
+  font-family: "Apfel Grotezk";
+  src: url("./assets/fonts/ApfelGrotezk-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
-  --color-brand-blue: #013acc;
-  --color-brand-blue-dark: #012e9e;
-  --color-brand-yellow: #ebfe77;
-  --color-brand-mist: #f3f8fc;
+@font-face {
+  font-family: "Apfel Grotezk";
+  src: url("./assets/fonts/ApfelGrotezk-Mittel.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Apfel Grotezk";
+  src: url("./assets/fonts/ApfelGrotezk-Satt.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Apfel Grotezk";
+  src: url("./assets/fonts/ApfelGrotezk-Fett.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-display: "Apfel Grotezk", sans-serif;
+  --font-body: "Apfel Grotezk", sans-serif;
+
+  /* Aktuelle Palette laut Figma "Explorations" (Stand 2026-08-21).
+     Kann sich noch ändern -- an dieser Stelle zentral anpassen. */
+  --color-royal-blue: #020181;
+  --color-arctis-white: #efffff;
+  --color-lake-blue: #5888ea;
+  --color-powder-blue: #d0e6fd;
+  --color-powder-blue-shade: rgb(208 230 253 / 50%);
+}
+
+/* Typo-System: eine Klasse pro Stufe, Weight/Line-height fix zugeordnet,
+   Breakpoints (sm=640px, lg=1024px) direkt in der Utility eingebaut --
+   kein sm:/lg: mehr im Markup nötig. Werte an Figma-Vorgaben angelehnt. */
+@utility text-h1 {
+  font-size: 1.875rem; /* 30px */
+  line-height: 1.25;
+  font-weight: 700;
+  @media (min-width: 40rem) {
+    font-size: 2.25rem; /* 36px */
+  }
+  @media (min-width: 64rem) {
+    font-size: 2.75rem; /* 44px */
+    line-height: 2.6875rem; /* 43px */
+  }
+}
+
+@utility text-h2 {
+  font-size: 1.875rem;
+  line-height: 1.25;
+  font-weight: 700;
+  @media (min-width: 40rem) {
+    font-size: 2.25rem;
+  }
+  @media (min-width: 64rem) {
+    font-size: 2.75rem;
+    line-height: 2.6875rem;
+  }
+}
+
+@utility text-h3 {
+  font-size: 1.25rem; /* 20px */
+  line-height: 1.375;
+  font-weight: 700;
+  @media (min-width: 40rem) {
+    font-size: 1.5rem; /* 24px */
+  }
+}
+
+@utility text-body-lg {
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.5;
+  font-weight: 400;
+  @media (min-width: 40rem) {
+    font-size: 1.25rem; /* 20px */
+  }
+  @media (min-width: 64rem) {
+    font-size: 1.5rem; /* 24px */
+  }
+}
+
+@utility text-body {
+  font-size: 1rem; /* 16px */
+  line-height: 1.5;
+  font-weight: 400;
+  @media (min-width: 40rem) {
+    font-size: 1.125rem; /* 18px */
+  }
+}
+
+@utility text-body-sm {
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.5;
+  font-weight: 400;
+  @media (min-width: 40rem) {
+    font-size: 1rem; /* 16px */
+  }
+}
+
+@utility text-caption {
+  font-size: 1rem; /* 16px, statisch */
+  line-height: 1.5;
+  font-weight: 400;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
+@keyframes blur-in {
+  from {
+    opacity: 0;
+    transform: scale(1.03);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-blur-in {
+  animation: blur-in 1100ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
 body {
   margin: 0;
-  background-color: var(--color-brand-blue);
+  background-color: var(--color-royal-blue);
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
 }
