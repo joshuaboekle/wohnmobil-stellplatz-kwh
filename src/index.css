@@ -49,8 +49,8 @@
    Breakpoints (sm=640px, lg=1024px) direkt in der Utility eingebaut --
    kein sm:/lg: mehr im Markup nötig. Werte an Figma-Vorgaben angelehnt. */
 @utility text-h1 {
-  font-size: 1.875rem; /* 30px */
-  line-height: 1.25;
+  font-size: 2.125rem; /* 34px */
+  line-height: 1.2;
   font-weight: 700;
   @media (min-width: 40rem) {
     font-size: 2.25rem; /* 36px */
@@ -62,21 +62,21 @@
 }
 
 @utility text-h2 {
-  font-size: 1.875rem;
-  line-height: 1.25;
+  font-size: 2.5rem; /* 40px */
+  line-height: 1.2;
   font-weight: 700;
   @media (min-width: 40rem) {
-    font-size: 2.25rem;
+    font-size: 2.5rem; /* 40px */
   }
   @media (min-width: 64rem) {
-    font-size: 2.75rem;
-    line-height: 2.6875rem;
+    font-size: 3rem; /* 48px */
+    line-height: 2.9375rem; /* 47px */
   }
 }
 
 @utility text-h3 {
-  font-size: 1.25rem; /* 20px */
-  line-height: 1.375;
+  font-size: 1.375rem; /* 22px */
+  line-height: 1.35;
   font-weight: 700;
   @media (min-width: 40rem) {
     font-size: 1.5rem; /* 24px */
@@ -84,7 +84,7 @@
 }
 
 @utility text-body-lg {
-  font-size: 1.125rem; /* 18px */
+  font-size: 1.25rem; /* 20px */
   line-height: 1.5;
   font-weight: 400;
   @media (min-width: 40rem) {
@@ -96,7 +96,7 @@
 }
 
 @utility text-body {
-  font-size: 1rem; /* 16px */
+  font-size: 1.125rem; /* 18px */
   line-height: 1.5;
   font-weight: 400;
   @media (min-width: 40rem) {
@@ -105,7 +105,7 @@
 }
 
 @utility text-body-sm {
-  font-size: 0.875rem; /* 14px */
+  font-size: 1rem; /* 16px */
   line-height: 1.5;
   font-weight: 400;
   @media (min-width: 40rem) {
@@ -114,7 +114,7 @@
 }
 
 @utility text-caption {
-  font-size: 1rem; /* 16px, statisch */
+  font-size: 1.0625rem; /* 17px, statisch */
   line-height: 1.5;
   font-weight: 400;
 }

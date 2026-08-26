@@ -16,7 +16,7 @@ export default function Impressum() {
   return (
     <div className="flex min-h-screen flex-col bg-royal-blue">
       <NavBar />
-      <main className="mx-auto w-full max-w-md flex-1 px-6 py-16 sm:px-10">
+      <main className="mx-auto w-full max-w-md flex-1 px-3 py-16 sm:px-10">
         <h1 className="mb-8 font-display text-h1 text-arctis-white">Impressum</h1>
 
         <div className="flex flex-col gap-6 font-display text-body-lg text-arctis-white">

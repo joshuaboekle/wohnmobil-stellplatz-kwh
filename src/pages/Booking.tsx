@@ -34,12 +34,12 @@ function todayIso() {
 // kein Logo/CTA.
 function BookingHeader() {
   return (
-    <header className="sticky top-0 z-20 bg-royal-blue/90 px-6 py-4 backdrop-blur sm:px-10 sm:py-6">
-      <div className="mx-auto flex w-full max-w-5xl items-center gap-4">
+    <header className="sticky top-0 z-20 bg-royal-blue/90 py-4 backdrop-blur sm:py-6">
+      <div className="mx-auto flex w-full max-w-5xl items-center gap-4 px-3 sm:px-10">
         <Link
           to="/"
           aria-label="Zurück zur Startseite"
-          className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border-[1.5px] border-powder-blue-shade text-arctis-white transition-[filter,transform] duration-100 active:brightness-[0.84] active:scale-[0.98] sm:h-16 sm:w-16"
+          className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border-[1.5px] border-powder-blue-shade text-arctis-white transition-[filter,transform] duration-100 active:brightness-[0.84] active:scale-[0.98] sm:h-16 sm:w-16"
         >
           <ArrowLeft className="h-6 w-6 sm:h-7 sm:w-7" aria-hidden="true" />
         </Link>
@@ -132,7 +132,7 @@ export default function Booking() {
     return (
       <div className="flex min-h-screen flex-col bg-royal-blue">
         <NavBar showCta={false} />
-        <main className="flex flex-1 flex-col items-center justify-center gap-6 px-6 py-24 text-center">
+        <main className="flex flex-1 flex-col items-center justify-center gap-6 px-3 py-24 text-center">
           <CheckCircle2 className="h-14 w-14 text-lake-blue sm:h-16 sm:w-16" aria-hidden="true" />
           <h1 className="font-display text-h1 text-arctis-white">
             Anfrage gesendet.
@@ -159,14 +159,14 @@ export default function Booking() {
     <div className="flex min-h-screen flex-col bg-royal-blue">
       <BookingHeader />
 
-      <main className="mx-auto w-full max-w-md px-6 py-8 sm:px-10 lg:max-w-5xl">
+      <main className="mx-auto w-full max-w-md px-3 py-8 sm:px-10 lg:max-w-5xl">
         <form onSubmit={handleSubmit} className="flex flex-col gap-2 lg:flex-row lg:items-start" noValidate>
           <div className="flex flex-col gap-6 pb-8 lg:w-[400px] lg:shrink-0 lg:fixed lg:top-36 lg:left-[calc(50%-32rem+2.5rem)] lg:max-h-[calc(100vh-10rem)] lg:overflow-y-auto lg:pb-0">
             <h1 className="font-display text-h1 text-arctis-white">
               Interesse an einem Stellplatz?
             </h1>
 
-            <div className="flex flex-col gap-6 rounded-[32px] bg-arctis-white px-4 pt-6 pb-6 sm:px-6 sm:pt-8">
+            <div className="flex flex-col gap-6 rounded-[32px] bg-arctis-white px-4 pt-6 pb-4 sm:px-6 sm:pt-8">
               <div className="flex flex-col text-royal-blue">
                 <div className="flex items-baseline justify-between gap-2 text-[32px] leading-[1.1] sm:text-[44px] sm:leading-[50px]">
                   <p className="font-display">Stellplatz</p>
@@ -182,9 +182,11 @@ export default function Booking() {
                   type="button"
                   onClick={() => setInfoOpen((prev) => !prev)}
                   aria-expanded={infoOpen}
-                  className="flex w-full cursor-pointer items-center justify-between gap-3 font-display text-body-sm text-lake-blue"
+                  className="flex w-full cursor-pointer items-center justify-between gap-3 font-display text-lg text-lake-blue sm:text-xl"
                 >
-                  <span className="text-left">Alle Infos einblenden</span>
+                  <span className="text-left">
+                    {infoOpen ? "Weniger Infos anzeigen" : "Alle Infos einblenden"}
+                  </span>
                   <ChevronDown
                     className={`h-5 w-5 shrink-0 transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] sm:h-6 sm:w-6 ${
                       infoOpen ? "rotate-180" : ""
@@ -196,11 +198,11 @@ export default function Booking() {
                   className="grid transition-[grid-template-rows] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]"
                   style={{ gridTemplateRows: infoOpen ? "1fr" : "0fr" }}
                 >
-                  <ul className="flex flex-col gap-3 overflow-hidden pt-4">
+                  <ul className="flex flex-col gap-4 overflow-hidden pt-4">
                     {priceFeatures.map(({ icon: Icon, label }) => (
                       <li key={label} className="flex items-start gap-2.5">
-                        <Icon className="mt-0.5 h-5 w-5 shrink-0 text-royal-blue" aria-hidden="true" />
-                        <span className="font-display text-body-sm text-royal-blue">
+                        <Icon className="mt-0.5 h-6 w-6 shrink-0 text-royal-blue" aria-hidden="true" />
+                        <span className="font-display text-lg text-royal-blue sm:text-xl">
                           {label}
                         </span>
                       </li>
@@ -232,7 +234,7 @@ export default function Booking() {
               <p className="font-display text-body-lg text-arctis-white">
                 Wie groß ist ihr Fahrzeug?
               </p>
-              <div className="flex gap-3">
+              <div className="grid grid-cols-2 gap-3">
                 <Input
                   label="Länge"
                   type="number"
@@ -326,6 +328,7 @@ export default function Booking() {
               variant="light"
               fullWidth
               disabled={status === "sending"}
+              className="!text-lg sm:!text-xl"
               icon={<ArrowRight className="h-6 w-6 sm:h-7 sm:w-7" aria-hidden="true" />}
             >
               {status === "sending" ? "Wird gesendet…" : "Stellplatz anfragen"}

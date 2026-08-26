@@ -55,31 +55,31 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-royal-blue">
-      <NavBar visible={navBarVisible} />
+      <NavBar visible={navBarVisible} overlay />
 
       <main>
         {/* Hero */}
-        <section className="px-6 pt-6 pb-6 text-center sm:px-10 sm:pt-10 sm:pb-16 lg:flex lg:h-[640px] lg:px-0 lg:pt-0 lg:pb-0 lg:text-left">
+        <section className="px-3 pt-10 pb-6 text-center sm:px-10 sm:pt-14 sm:pb-16 lg:flex lg:h-[640px] lg:px-0 lg:pt-0 lg:pb-0 lg:text-left">
           <h1 className="lg:flex lg:h-full lg:flex-1 lg:flex-col lg:justify-center lg:px-10 xl:px-16">
             <LogoAnimated
-              className="mx-auto h-auto w-full max-w-[220px] lg:mx-0 lg:max-w-[360px]"
+              className="mx-auto h-auto w-full max-w-[220px] lg:mx-auto lg:max-w-[360px]"
             />
             <span className="sr-only">Wohnmobil Stellplatz Kornwestheim</span>
           </h1>
 
-          <div className="animate-blur-in relative z-10 -mx-6 -mb-16 mt-8 aspect-square w-[calc(100%+3rem)] sm:mx-auto sm:mt-10 sm:mb-0 sm:w-full sm:max-w-[400px] lg:relative lg:mx-0 lg:mt-0 lg:mb-0 lg:aspect-auto lg:h-full lg:w-auto lg:max-w-none lg:flex-1 [animation-delay:150ms]">
+          <div className="animate-blur-in relative z-0 mx-0 mt-12 mb-0 aspect-square w-full sm:mx-auto sm:mt-10 sm:mb-0 sm:max-w-[400px] lg:relative lg:mx-0 lg:mt-0 lg:mb-0 lg:aspect-auto lg:h-full lg:w-auto lg:max-w-none lg:flex-1 [animation-delay:150ms]">
             <HeroGif className="size-full lg:!rounded-tl-none lg:!rounded-tr-none lg:!rounded-br-none lg:!rounded-bl-[32px]" />
           </div>
         </section>
 
         {/* Preis */}
-        <section className="flex flex-col items-center gap-6 px-6 pt-6 pb-16 sm:px-10 sm:py-16">
+        <section className="flex flex-col items-center gap-6 px-3 pt-6 pb-16 sm:px-10 sm:py-16">
           <p className="max-w-[322px] text-center font-display text-body-lg text-arctis-white">
             Einfacher Preis.
             <br />
             Keine komplizierten Tarife.
           </p>
-          <div ref={priceCardRef}>
+          <div ref={priceCardRef} className="w-full">
             <PriceCard />
           </div>
           <p className="max-w-[370px] text-center font-display text-body text-arctis-white lg:max-w-[800px] lg:text-nowrap">
@@ -91,30 +91,8 @@ export default function Home() {
           <VanMarquee />
 
           {/* Sicher stehen, sorglos starten */}
-          <section className="flex items-center justify-center px-6 py-24 sm:px-10 sm:py-28 lg:py-32">
+          <section className="flex items-center justify-center px-3 pt-16 pb-12 sm:px-10 sm:pt-20 sm:pb-14 lg:pt-24 lg:pb-16">
             <div className="flex w-full max-w-md flex-col gap-8 lg:max-w-5xl lg:flex-row lg:items-center lg:gap-16">
-              <div className="flex flex-1 flex-col gap-8">
-                <h2 className="font-display text-h2 text-royal-blue">
-                  Sicher stehen, sorglos starten.
-                </h2>
-                <p className="font-display text-body-lg text-royal-blue">
-                  Der Abstellplatz liegt zentral zwischen Stuttgart und Ludwigsburg.
-                </p>
-                <ul className="flex flex-col gap-4">
-                  <li className="flex items-center gap-2.5 font-display text-body-lg text-royal-blue">
-                    <Milestone className="h-6 w-6 shrink-0" aria-hidden="true" />
-                    5 Min. zur A81
-                  </li>
-                  <li className="flex items-center gap-2.5 font-display text-body-lg text-royal-blue">
-                    <TrainFront className="h-6 w-6 shrink-0" aria-hidden="true" />
-                    10 Min. zu Fuß zum Bahnhof Kornwestheim
-                  </li>
-                  <li className="flex items-center gap-2.5 font-display text-body-lg text-royal-blue">
-                    <HomeIcon className="h-6 w-6 shrink-0" aria-hidden="true" />
-                    Betreiber wohnt nebenan
-                  </li>
-                </ul>
-              </div>
               <div className="flex flex-1 flex-col gap-8">
                 <MapEmbed
                   lat={STELLPLATZ_LOCATION.lat}
@@ -141,12 +119,36 @@ export default function Home() {
                   </button>
                 </div>
               </div>
+              <div className="flex flex-1 flex-col gap-8">
+                <h2 className="font-display text-h2 text-royal-blue">
+                  Sicher stehen,
+                  <br />
+                  sorglos starten.
+                </h2>
+                <p className="font-display text-body-lg text-royal-blue">
+                  Der Abstellplatz liegt zentral zwischen Stuttgart und Ludwigsburg.
+                </p>
+                <ul className="flex flex-col gap-4">
+                  <li className="flex items-center gap-2.5 font-display text-body-lg text-royal-blue">
+                    <Milestone className="h-6 w-6 shrink-0" aria-hidden="true" />
+                    5 Min. zur A81
+                  </li>
+                  <li className="flex items-center gap-2.5 font-display text-body-lg text-royal-blue">
+                    <TrainFront className="h-6 w-6 shrink-0" aria-hidden="true" />
+                    10 Min. zu Fuß zum Bahnhof Kornwestheim
+                  </li>
+                  <li className="flex items-center gap-2.5 font-display text-body-lg text-royal-blue">
+                    <HomeIcon className="h-6 w-6 shrink-0" aria-hidden="true" />
+                    Betreiber wohnt nebenan
+                  </li>
+                </ul>
+              </div>
             </div>
           </section>
         </div>
 
         {/* Nachhaltigkeit */}
-        <section className="flex items-center justify-center bg-arctis-white px-6 py-16 sm:px-10">
+        <section className="flex items-center justify-center bg-arctis-white px-3 pt-16 pb-24 sm:px-10 sm:pt-16 sm:pb-28">
           <div className="flex w-full max-w-md flex-col gap-8 lg:max-w-5xl lg:flex-row lg:items-center lg:gap-16">
             <div className="flex flex-1 flex-col items-start gap-8">
               <Leaf className="h-14 w-14 text-royal-blue sm:h-16 sm:w-16" aria-hidden="true" />
@@ -176,17 +178,17 @@ export default function Home() {
         </section>
 
         {/* FAQ */}
-        <section className="bg-royal-blue px-6 py-16 sm:px-10">
+        <section className="bg-royal-blue px-3 py-16 sm:px-10">
           <div className="mx-auto max-w-md lg:max-w-2xl">
-            <h2 className="mb-2 font-display text-h3 text-arctis-white">
-              FAQ
+            <h2 className="mb-2 font-display text-h2 text-arctis-white">
+              Fragen und Antworten
             </h2>
             <FaqAccordion items={faqItems} />
           </div>
         </section>
 
         {/* Persönliche Vorstellung */}
-        <section className="flex items-center justify-center bg-royal-blue px-6 py-16 sm:px-10">
+        <section className="flex items-center justify-center bg-royal-blue px-3 py-16 sm:px-10">
           <div className="flex w-full max-w-md flex-col gap-8 lg:max-w-5xl lg:flex-row lg:items-end lg:gap-16">
             <div className="flex flex-1 flex-col gap-8">
               <h2 className="font-display text-h2 text-arctis-white">

@@ -11,9 +11,7 @@ export type BookingRequest = {
 
 const ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
 
-// Testadresse während der Entwicklung -- Anfragen laufen hier auf,
-// bis die echte Kontaktadresse feststeht.
-export const BOOKING_TEST_RECIPIENT = "post@joshuaboekle.de";
+export const BOOKING_RECIPIENT = "info@wohnmobil-stellplatz-kornwestheim.de";
 
 export const isEmailConfigured = Boolean(ACCESS_KEY);
 
@@ -29,7 +27,7 @@ export async function sendBookingRequest(data: BookingRequest) {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       access_key: ACCESS_KEY,
-      to_email: BOOKING_TEST_RECIPIENT,
+      to_email: BOOKING_RECIPIENT,
       subject: "Neue Stellplatz-Anfrage",
       vehicle_type: data.vehicleType,
       vehicle_length: data.length,

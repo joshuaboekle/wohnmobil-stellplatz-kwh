@@ -9,7 +9,7 @@ export default function Footer({ variant = "light" }: FooterProps) {
 
   return (
     <footer
-      className={`flex flex-col items-center justify-between gap-4 border-t px-6 py-8 text-center font-display text-sm sm:flex-row sm:px-10 sm:text-left ${
+      className={`flex flex-col items-center justify-between gap-4 border-t px-3 py-8 text-center font-display text-sm sm:flex-row sm:px-10 sm:text-left ${
         isDark
           ? "border-arctis-white/10 bg-royal-blue text-arctis-white/70"
           : "border-royal-blue/10 bg-arctis-white text-royal-blue/70"

@@ -13,7 +13,7 @@ export default function VanMarquee() {
   const x = useTransform(scrollYProgress, [0, 1], ["-60%", "0%"]);
 
   return (
-    <div className="overflow-hidden bg-arctis-white py-8">
+    <div className="overflow-hidden bg-arctis-white pt-16 pb-4 sm:pt-20 sm:pb-6">
       <motion.div className="flex w-max items-center gap-6" style={{ x }}>
         {[...vanRow, ...vanRow].map((src, i) => (
           <img key={i} src={src} alt="" className="h-24 w-36 shrink-0 sm:h-32 sm:w-48" aria-hidden="true" />
