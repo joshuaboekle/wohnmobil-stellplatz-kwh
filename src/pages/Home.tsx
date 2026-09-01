@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Milestone, TrainFront, Home as HomeIcon, Copy, Check, Leaf, Phone } from "lucide-react";
+import { Milestone, TrainFront, Home as HomeIcon, Copy, Check, Leaf } from "lucide-react";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import PriceCard from "../components/PriceCard";
@@ -10,14 +10,12 @@ import MapEmbed from "../components/ui/MapEmbed";
 import LogoAnimated from "../components/ui/LogoAnimated";
 import FaqAccordion from "../components/FaqAccordion";
 import { faqItems } from "../data/faq";
-import manWithCamperImg from "../assets/img/man-with-camper.webp";
-import schotterrasenImg from "../assets/img/schotterrasen.webp";
+import simonImg from "../assets/img/Simon.jpg";
+import schotterrasenImg from "../assets/img/jonathan-marchant-E6k3YoUdo4M-unsplash.jpg";
 
-// Beispiel-Koordinaten (Kornwestheim) bis der echte Standort feststeht.
-const STELLPLATZ_LOCATION = { lat: 48.8574518, lng: 9.1888737 };
-const STELLPLATZ_ADDRESS = "Straßenname 23, 70806 Kornwestheim";
+const STELLPLATZ_LOCATION = { lat: 48.8676896, lng: 9.1696185 };
+const STELLPLATZ_ADDRESS = "Gröninger Weg, 70806 Kornwestheim";
 const CONTACT_EMAIL = "info@wohnmobil-stellplatz-kornwestheim.de";
-const CONTACT_PHONE = "01223 3445456";
 
 const secondaryIconButtonClassName =
   "flex shrink-0 items-center justify-center rounded-full border border-arctis-white/40 p-3 text-arctis-white transition-[filter,transform] duration-100 active:brightness-[0.84] active:scale-[0.98]";
@@ -78,6 +76,8 @@ export default function Home() {
             Einfacher Preis.
             <br />
             Keine komplizierten Tarife.
+            <br />
+            Alles inkludiert.
           </p>
           <div ref={priceCardRef} className="w-full">
             <PriceCard />
@@ -97,11 +97,11 @@ export default function Home() {
                 <MapEmbed
                   lat={STELLPLATZ_LOCATION.lat}
                   lng={STELLPLATZ_LOCATION.lng}
-                  label="Standort des Stellplatzes (Beispiel-Location)"
+                  label="Standort des Stellplatzes"
                 />
                 <div className="flex items-center justify-between">
                   <p className="font-display text-body-lg text-royal-blue">
-                    Straßenname 23
+                    Gröninger Weg
                     <br />
                     70806 Kornwestheim
                   </p>
@@ -167,8 +167,8 @@ export default function Home() {
               Statt Asphalt setzen wir auf Schotterrasen.
               <br />
               <br />
-              Er lässt Regenwasser natürlich versickern, füllt damit das Grundwasser und hält den
-              Boden lebendig.
+              Er lässt Regenwasser natürlich versickern, füllt damit das Grundwasser und bindet
+              CO2.
               <br />
               <br />
               Für Ihr Fahrzeug macht das keinen Unterschied, die Stellfläche bleibt eben, stabil
@@ -205,8 +205,8 @@ export default function Home() {
               </div>
               <PlaceholderBox className="h-72 w-full sm:h-80">
                 <img
-                  src={manWithCamperImg}
-                  alt="Simon, der Betreiber, vor seinem eigenen Camper"
+                  src={simonImg}
+                  alt="Simon, der Betreiber des Abstellplatzes"
                   className="h-full w-full object-cover"
                 />
               </PlaceholderBox>
@@ -233,18 +233,6 @@ export default function Home() {
                       <Copy className="h-5 w-5" aria-hidden="true" />
                     )}
                   </button>
-                </div>
-                <div className="flex items-center justify-between gap-4 py-4">
-                  <p className="font-display text-body-lg text-arctis-white">
-                    {CONTACT_PHONE}
-                  </p>
-                  <a
-                    href={`tel:${CONTACT_PHONE.replace(/\s+/g, "")}`}
-                    aria-label="Anrufen"
-                    className={secondaryIconButtonClassName}
-                  >
-                    <Phone className="h-5 w-5" aria-hidden="true" />
-                  </a>
                 </div>
               </div>
             </div>

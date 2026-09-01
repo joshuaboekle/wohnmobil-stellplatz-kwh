@@ -25,24 +25,20 @@ export default function Impressum() {
             <p>
               [Name / Firma folgt]
               <br />
-              [Straße Hausnummer folgt]
+              Gröninger Weg 9
               <br />
-              [PLZ Ort folgt]
+              70806 Kornwestheim
             </p>
           </section>
 
           <section>
             <h2 className="mb-1 font-display text-h3">Kontakt</h2>
-            <p>
-              Telefon: [Telefonnummer folgt]
-              <br />
-              E-Mail: [E-Mail-Adresse folgt]
-            </p>
+            <p>E-Mail: info@wohnmobil-stellplatz-kornwestheim.de</p>
           </section>
 
           <section>
             <h2 className="mb-1 font-display text-h3">Umsatzsteuer-ID</h2>
-            <p>[Falls vorhanden: USt-IdNr. gemäß § 27a UStG folgt]</p>
+            <p>Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG: DE462136188</p>
           </section>
 
           <section>

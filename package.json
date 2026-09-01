@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "prebuild": "node scripts/fetch-faq.mjs",
     "build": "tsc -b && vite build",
+    "fetch:faq": "node scripts/fetch-faq.mjs",
     "lint": "oxlint",
     "preview": "vite preview"
   },

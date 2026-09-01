@@ -172,9 +172,11 @@ export default function Booking() {
                   <p className="font-display">Stellplatz</p>
                   <p className="font-display font-medium whitespace-nowrap">85 €</p>
                 </div>
-                <div className="flex items-start justify-between font-display text-base opacity-60 sm:text-lg">
-                  <p>pro Monat</p>
-                  <p>inkl. Mwst.</p>
+                <div className="flex items-center justify-between gap-2">
+                  <p className="font-display text-base text-royal-blue/60 sm:text-lg">pro Monat</p>
+                  <span className="rounded-[4px] bg-lake-blue px-2 py-0.5 font-display text-xs font-medium text-arctis-white sm:text-sm">
+                    inkl. Mwst.
+                  </span>
                 </div>
               </div>
               <div>
@@ -256,7 +258,7 @@ export default function Booking() {
               </div>
             </div>
 
-            <div className="py-8">
+            <div className="flex flex-col gap-3 py-8">
               <Input
                 label="Ab wann möchten sie mieten?*"
                 type="date"
@@ -272,6 +274,9 @@ export default function Booking() {
                 error={dateError ?? undefined}
                 required
               />
+              <p className="font-display text-body-sm text-lake-blue">
+                Neueröffnung: Ab dem 01.12.2026 können Sie ihr Fahrzeug bei uns abstellen.
+              </p>
             </div>
 
             <div className="py-8">

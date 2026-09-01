@@ -3,10 +3,10 @@ import { ArrowRight, ChevronDown } from "lucide-react";
 import ButtonLink from "./ui/ButtonLink";
 import { priceFeatures } from "../data/priceFeatures";
 
-// Direkt sichtbar bis inkl. "Nachhaltiger Schotterrasen" (Index 5), der Rest
-// klappt per Accordion auf -- so sieht man auf Anhieb die wichtigsten Punkte,
-// ohne dass die Karte auf der Startseite zu lang wird.
-const ALWAYS_VISIBLE_COUNT = 6;
+// Direkt sichtbar bis inkl. "Schotterrasen" (Index 6), der Rest klappt per
+// Accordion auf -- so sieht man auf Anhieb die wichtigsten Punkte, ohne dass
+// die Karte auf der Startseite zu lang wird.
+const ALWAYS_VISIBLE_COUNT = 7;
 
 function FeatureColumns({
   features,
@@ -52,9 +52,11 @@ export default function PriceCard() {
             <p className="font-display">Stellplatz</p>
             <p className="font-display font-medium whitespace-nowrap">85 €</p>
           </div>
-          <div className="flex items-start justify-between font-display text-base opacity-60 sm:text-lg lg:justify-start lg:gap-8">
-            <p>pro Monat</p>
-            <p>inkl. Mwst.</p>
+          <div className="flex items-center justify-between gap-2 lg:justify-start lg:gap-8">
+            <p className="font-display text-base text-royal-blue/60 sm:text-lg">pro Monat</p>
+            <span className="rounded-[4px] bg-lake-blue px-2 py-0.5 font-display text-xs font-medium text-arctis-white sm:text-sm">
+              inkl. Mwst.
+            </span>
           </div>
         </div>
 
